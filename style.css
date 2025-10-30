@@ -1,0 +1,30 @@
+/* Reset and global styles */
+:root {
+    --indigo-600: #4f46e5;
+    --green-500: #10b981;
+}
+
+/* Custom shadow for cards and buttons */
+.card-shadow {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.03);
+}
+
+.hover-lift:hover {
+    transform: translateY(-3px) scale(1.01);
+    box-shadow: 0 15px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+/* Input/Textarea focus consistency */
+input:focus, textarea:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.5); /* Custom focus ring */
+}
+
+/* Specific styling for the generated story generator section */
+/* The story-generator-section class is repurposed for the manual story input */
+.story-generator-section {
+    transition: all 0.3s ease-in-out;
+    border: 1px solid var(--indigo-600); 
+    background-color: #f7f7ff; 
+    border-radius: 0.5rem;
+}

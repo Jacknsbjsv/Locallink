@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LocalLink</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Apply Inter font family */
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        // REMOVED getAuth, onAuthStateChanged, and setLogLevel from import as authentication is removed.
+        import { getFirestore, collection, addDoc, onSnapshot, doc, query } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        // Expose Firebase imports to the global scope for app.js to use
+        window.firebase = {
+            initializeApp,
+            // getAuth, onAuthStateChanged, setLogLevel, // REMOVED Auth-related exports
+            getFirestore, collection, addDoc, onSnapshot, doc, query
+        };
+    </script>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <header class="bg-white text-gray-800 p-4 shadow-md sticky top-0 z-10 border-b">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <button id="nav-home" class="text-3xl font-extrabold text-indigo-600 hover:text-indigo-800 transition duration-150">
+                LocalLink
+            </button>
+            <nav class="space-x-4 flex items-center">
+            <button id="nav-artisans" class="nav-link px-3 py-1 font-medium text-gray-600 hover:text-indigo-600 transition duration-150">Artisans</button>
+            <button id="nav-onboard" class="bg-indigo-600 text-white px-5 py-2 rounded-lg hover:bg-indigo-700 transition duration-150 font-semibold shadow-md">
+               Onboard Artisan
+            </button>
+            </nav>
+        
+        </div>
+    </header>
+
+    <main id="main-content" class="max-w-7xl mx-auto p-4 flex-grow">
+        </main>
+
+    <div id="message-container" class="fixed bottom-4 right-4 z-50"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>
